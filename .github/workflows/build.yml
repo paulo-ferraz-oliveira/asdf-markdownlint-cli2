@@ -22,12 +22,12 @@ jobs:
         uses: paulo-ferraz-oliveira/parse-tool-versions@v1
         id: tool-versions
 
-      - name: python
+      - name: nodejs
         uses: actions/setup-node@v3
         with:
-          python-version: ${{steps.tool-versions.outputs.nodejs}}
+          node-version: ${{steps.tool-versions.outputs.nodejs}}
 
       - name: plugin-test
         uses: asdf-vm/actions/plugin-test@v2
         with:
-          command: awslocal --version
+          command: node_modules/.bin/markdownlint-cli2 _version
