@@ -58,7 +58,7 @@ All notable changes to this project will be referenced from the [CHANGELOG](CHAN
 
 ## Contributing
 
-Though this project is maintained by [paulo-ferraz-oliveira](https://github.com/paulo-ferraz-oliveira)
+Though this project is maintained by [paulo-ferraz-oliveira](https://github.com/paulo-ferraz-oliveira),
 contributions are accepted and welcome. Check [CONTRIBUTING.md](CONTRIBUTING.md) for more.
 
 ## License
