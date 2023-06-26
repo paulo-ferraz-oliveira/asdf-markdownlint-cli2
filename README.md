@@ -24,6 +24,7 @@
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
 - `nodejs`: the Node.js JavaScript runtime.
+- `npm`: a package manager for the JavaScript programming language.
 
 ## Install
 
