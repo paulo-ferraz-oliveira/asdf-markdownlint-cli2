@@ -1,4 +1,4 @@
- asdf-markdownlint-cli2 [![Build][build-img]][build] [![Lint][lint-img]][lint]
+# asdf-markdownlint-cli2 [![Build][build-img]][build] [![Lint][lint-img]][lint]
 
 [build]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions
 [build-img]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions/workflows/build.yml/badge.svg
