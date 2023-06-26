@@ -5,10 +5,10 @@
 [lint]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions
 [lint-img]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions/workflows/lint.yml/badge.svg
 
-[markdownlint-cli2](https://github.com/localstack/markdownlint-cli2#usage) plugin for the
+[markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) plugin for the
 [asdf version manager](https://asdf-vm.com).
 
-**Disclaimer**: the authors of this plugin are not affiliated with [markdownlint-cli2]https://github.com/DavidAnson/markdownlint-cli2).
+**Disclaimer**: the authors of this plugin are not affiliated with [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2).
 
 ## Contents
 
