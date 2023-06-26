@@ -1,36 +1,65 @@
-# asdf-plugin-template [![Build](https://github.com/asdf-vm/asdf-plugin-template/actions/workflows/build.yml/badge.svg)](https://github.com/asdf-vm/asdf-plugin-template/actions/workflows/build.yml) [![Lint](https://github.com/asdf-vm/asdf-plugin-template/actions/workflows/lint.yml/badge.svg)](https://github.com/asdf-vm/asdf-plugin-template/actions/workflows/lint.yml)
+ asdf-markdownlint-cli2 [![Build][build-img]][build] [![Lint][lint-img]][lint]
 
-This is an [asdf-vm plugin](https://asdf-vm.com/#/plugins-create) template with CI to run [Shellcheck](https://github.com/koalaman/shellcheck) and testing with the [asdf test GitHub Action](https://github.com/asdf-vm/actions).
+[build]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions
+[build-img]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions/workflows/build.yml/badge.svg
+[lint]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions
+[lint-img]: https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2/actions/workflows/lint.yml/badge.svg
 
-## Usage
+[markdownlint-cli2](https://github.com/localstack/markdownlint-cli2#usage) plugin for the
+[asdf version manager](https://asdf-vm.com).
 
-1. [Generate](https://github.com/asdf-vm/asdf-plugin-template/generate) a new repository based on this template.
-1. Clone it and run `bash setup.bash`.
-1. Force push to your repo: `git push --force-with-lease`.
-1. Adapt your code at the TODO markers. To find the markers: `git grep TODO`.
-1. To develop your plugin further, please read [the plugins create section of the docs](https://asdf-vm.com/plugins/create.html).
+**Disclaimer**: the authors of this plugin are not affiliated with [markdownlint-cli2]https://github.com/DavidAnson/markdownlint-cli2).
 
->A feature of this plugin-template when hosted on GitHub is the use of [release-please](https://github.com/googleapis/release-please), an automated release tool. It leverages [Conventional Commit messages](https://www.conventionalcommits.org/) to determine semver release type, see the [documentation](https://github.com/googleapis/release-please).
+## Contents
+
+- [Dependencies](#dependencies)
+- [Install](#install)
+- [Versioning](#versioning)
+- [Readme](#readme)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Dependencies
+
+- `bash`, `curl`, `tar`: generic POSIX utilities.
+- `nodejs`: the Node.js JavaScript runtime.
+
+## Install
+
+Start by installing the plugin with:
+
+```shell
+asdf plugin add markdownlint-cli2 https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2.git
+```
+
+Now install the tool with:
+
+```shell
+asdf install markdownlint-cli2 latest
+```
+
+Check [asdf](https://github.com/asdf-vm/asdf)'s README for more instructions on how to
+install and manage versions.
+
+## Versioning
+
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## Readme
+
+We get inspiration for our README's format/content from
+[Make a README](https://www.makeareadme.com/).
+
+## Changelog
+
+All notable changes to this project will be referenced from the [CHANGELOG](CHANGELOG.md).
 
 ## Contributing
 
-Contributions welcome!
+Though this project is maintained by [paulo-ferraz-oliveira](https://github.com/paulo-ferraz-oliveira)
+contributions are accepted and welcome. Check [CONTRIBUTING.md](CONTRIBUTING.md) for more.
 
-1. Install `asdf` tools
+## License
 
-    ```shell
-    asdf plugin add shellcheck https://github.com/luizm/asdf-shellcheck.git
-    asdf plugin add shfmt https://github.com/luizm/asdf-shfmt.git
-    asdf install
-    ```
-
-1. Develop!
-
-1. Lint & Format
-
-    ```shell
-    ./scripts/format.bash
-    ./scripts/lint.bash
-    ```
-
-1. PR changes
+Check [LICENSE](LICENSE).
