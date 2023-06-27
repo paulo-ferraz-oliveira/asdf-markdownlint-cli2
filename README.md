@@ -8,7 +8,12 @@
 [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) plugin for the
 [asdf version manager](https://asdf-vm.com).
 
-**Disclaimer**: the authors of this plugin are not affiliated with [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2).
+**Disclaimer**: the authors of this plugin are not affiliated with [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2);
+for information purposes we show the license associated with that software:
+[![markdownlint License][markdownlint-cli2-license-img]][markdownlint-cli2-license].
+
+[markdownlint-cli2-license-img]: https://img.shields.io/github/license/DavidAnson/markdownlint-cli2.svg?label=markdownlint-cli2%20License&color=lightgrey
+[markdownlint-cli2-license]: https://github.com/DavidAnson/markdownlint-cli2/blob/main/LICENSE
 
 ## Contents
 
