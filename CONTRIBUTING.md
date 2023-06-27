@@ -68,7 +68,9 @@ Also, for testing locally use:
 ```shell
 # We are aware that _version doesn't show the tool's version, but it hopefully prevents
 # it from failing while trying to lint an inexisting file, while allowing it to self-test
-asdf plugin test markdownlint-cli2 https://github.com/paulo-ferraz-oliveira/asdf-markdownlint-cli2.git "node_modules/.bin/markdownlint-cli2 _version" --asdf-plugin-gitref main
+# Replace <user> with your GitHub user name
+# Replace <branch> with the branch you pushed
+asdf plugin test markdownlint-cli2 https://github.com/<user>/asdf-markdownlint-cli2.git "node_modules/.bin/markdownlint-cli2 _version" --asdf-plugin-gitref <branch>
 ```
 <!-- markdownlint-enable -->
 
