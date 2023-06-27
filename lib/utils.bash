@@ -4,7 +4,7 @@ set -euo pipefail
 
 GH_REPO="https://github.com/DavidAnson/markdownlint-cli2"
 TOOL_NAME="markdownlint-cli2"
-BASE_TOOL="node_modules/.bin/markdownlint-cli2"
+BASE_TOOL="markdownlint-cli2"
 TOOL_TEST="$BASE_TOOL _version"
 
 fail() {
@@ -33,12 +33,32 @@ list_all_versions() {
 	list_github_tags
 }
 
+ensure() {
+	local check=$1
+	local msg=$2
+	local res
+
+	eval "$check" >/dev/null
+	res=$?
+	[ "$res" == "0" ] || fail "$msg (${check} == $res)"
+}
+
+ensure_node() {
+	ensure "which node" "it appears node is not available"
+}
+
+ensure_npm() {
+	ensure "which npm" "it appears npm is not available"
+}
+
 download_release() {
 	local version destination
 	version="$1"
 	destination="$2"
 
 	printf "* Downloading %s release %s...\n" "$TOOL_NAME" "$version"
+	ensure_node
+	ensure_npm
 	npm pack --silent "${TOOL_NAME}@${version}" --pack-destination "$destination" >/dev/null
 }
 
@@ -52,14 +72,19 @@ install_version() {
 	fi
 
 	(
-		mkdir -p "$install_path"
-		cd "$install_path"
+		mkdir -p "$install_path/bin"
 
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
-		npm --silent install markdownlint-cli2 --save-dev >/dev/null
+		ensure_node
+		ensure_npm
+		npm --silent install --prefix "$install_path" markdownlint-cli2 --save-dev >/dev/null
 
 		local tool_cmd
-		tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
+		tool_cmd="bin/$(echo "$TOOL_TEST" | cut -d' ' -f1)"
+
+		ln -s "$install_path/node_modules/.bin/$BASE_TOOL" "$install_path/$tool_cmd"
+		chmod +x "$install_path/$tool_cmd"
+
 		test -x "$install_path/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."
 
 		echo "$TOOL_NAME $version installation was successful!"
