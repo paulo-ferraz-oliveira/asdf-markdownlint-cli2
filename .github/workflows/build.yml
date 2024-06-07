@@ -10,24 +10,26 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-latest
-          - macos-latest
+          # renovate datasource: github-runners, depName: ubuntu
+          - ubuntu-20.04
+          # renovate datasource: github-runners, depName: macos
+          - macos-12
 
     runs-on: ${{matrix.os}}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4.1.6
 
       - name: parse-tool-versions
-        uses: paulo-ferraz-oliveira/parse-tool-versions@v1
+        uses: paulo-ferraz-oliveira/parse-tool-versions@v1.0.3
         id: tool-versions
 
       - name: nodejs
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{steps.tool-versions.outputs.nodejs}}
 
       - name: plugin-test
-        uses: asdf-vm/actions/plugin-test@v2
+        uses: asdf-vm/actions/plugin-test@v3.0.2
         with:
           command: markdownlint-cli2 _version
