@@ -27,14 +27,10 @@ jobs:
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
-      - name: parse-tool-versions
-        uses: paulo-ferraz-oliveira/parse-tool-versions@534819f70c0c04d788b49dafc29c8117901277bd # v1.0.3
-        id: tool-versions
-
       - name: nodejs
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
-          node-version: ${{steps.tool-versions.outputs.nodejs}}
+          node-version-file: .nvmrc
 
       - name: plugin-test
         uses: asdf-vm/actions/plugin-test@05e0d2ed97b598bfce82fd30daf324ae0c4570e6 # v3.0.2
