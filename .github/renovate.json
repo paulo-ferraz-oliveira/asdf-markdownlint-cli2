@@ -25,10 +25,10 @@
       "groupName": "package.json + .nvmrc deps"
     },
     {
-      "matchPackagePrefixes": [
-        "minimum_otp_vsn"
-      ],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": [
+        "minimum_otp_vsn{/,}**"
+      ]
     }
   ],
   "customManagers": [
