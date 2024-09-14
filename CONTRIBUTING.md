@@ -70,7 +70,7 @@ Also, for testing locally use:
 # it from failing while trying to lint an inexisting file, while allowing it to self-test
 # Replace <user> with your GitHub user name
 # Replace <branch> with the branch you pushed
-asdf plugin test markdownlint-cli2 https://github.com/<user>/asdf-markdownlint-cli2.git "markdownlint-cli2 _version" --asdf-plugin-gitref <branch>
+asdf plugin test markdownlint-cli2 git@github.com:<user>/asdf-markdownlint-cli2.git "markdownlint-cli2 _version" --asdf-plugin-gitref <branch>
 ```
 <!-- markdownlint-enable -->
 
