@@ -44,11 +44,11 @@ ensure() {
 }
 
 ensure_node() {
-	ensure "which node" "it appears node is not available"
+	ensure "command -v node" "it appears node is not available"
 }
 
 ensure_npm() {
-	ensure "which npm" "it appears npm is not available"
+	ensure "command -v npm" "it appears npm is not available"
 }
 
 download_release() {
