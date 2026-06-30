@@ -77,7 +77,11 @@ install_version() {
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 		ensure_node
 		ensure_npm
+		# Move the package's own package.json aside to prevent a circular
+		# self-dependency that causes npm to hang indefinitely.
+		mv "$install_path/package.json" "$install_path/package.json.upstream"
 		npm --silent install --prefix "$install_path" markdownlint-cli2 --save-dev >/dev/null
+		mv "$install_path/package.json.upstream" "$install_path/package.json"
 
 		local tool_cmd
 		tool_cmd="bin/$(echo "$TOOL_TEST" | cut -d' ' -f1)"
