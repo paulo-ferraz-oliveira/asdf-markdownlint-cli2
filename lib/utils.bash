@@ -59,7 +59,7 @@ download_release() {
 	printf "* Downloading %s release %s...\n" "$TOOL_NAME" "$version"
 	ensure_node
 	ensure_npm
-	npm pack --silent "${TOOL_NAME}@${version}" --pack-destination "$destination" >/dev/null
+	npm pack --verbose "${TOOL_NAME}@${version}" --pack-destination "$destination" >/dev/null
 }
 
 install_version() {
@@ -80,7 +80,7 @@ install_version() {
 		# Move the package's own package.json aside to prevent a circular
 		# self-dependency that causes npm to hang indefinitely.
 		mv "$install_path/package.json" "$install_path/package.json.upstream"
-		npm --silent install --prefix "$install_path" markdownlint-cli2 --save-dev >/dev/null
+		npm --verbose install --prefix "$install_path" markdownlint-cli2 --save-dev >/dev/null
 		mv "$install_path/package.json.upstream" "$install_path/package.json"
 
 		local tool_cmd
